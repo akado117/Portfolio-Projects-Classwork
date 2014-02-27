@@ -1,0 +1,33 @@
+.mid-header {
+	margin-top:60px;
+	margin-left: 8.3%;
+}
+
+.middle {
+background-color: #31708f;
+height:500px;
+border-radius: 15px;
+}
+
+.mid-left{
+	float: left;
+
+}
+
+.mid-left > h3{
+	margin-top: 50px;
+	color:white;
+
+}
+
+.mid-right{
+
+float: right;
+}
+
+.mid-right > h3{
+
+	margin-top: 50px;
+	color:white;
+
+}
