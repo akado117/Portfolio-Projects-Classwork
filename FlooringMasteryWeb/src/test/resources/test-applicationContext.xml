@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd"> 
+
+    
+    
+    <!-- Bean definitions go here -->
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url"
+                    value="jdbc:mysql://localhost:3306/flooring_mastery_test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="!QAZ2wsx#EDC"/>
+        <property name="initialSize" value="5"/>
+        <property name="maxActive" value="10"/>
+
+    </bean>
+    <bean id="jdbcTemplate" 
+          class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="TaxesDAO"
+          class="com.swcguild.flooringmasteryweb.Dao.TaxesDAO">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="ProductDAO"
+          class="com.swcguild.flooringmasteryweb.Dao.ProductDAO">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="OrderDAO"
+          class="com.swcguild.flooringmasteryweb.Dao.OrderDAO">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    
+    
+</beans>
