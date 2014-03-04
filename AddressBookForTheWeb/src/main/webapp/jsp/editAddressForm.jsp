@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="container col-lg-4 col-lg-offset-4">
-            <h1>Contact Information Form</h1>
+            <h1>Update Address Form</h1>
 
             <sf:form method="POST" action="updateAddress" commandName="address">
                 <sf:label path="first">First Name:</sf:label> <sf:input path="first" size="15"/><br/>
